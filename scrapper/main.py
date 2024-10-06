@@ -75,7 +75,7 @@ def extract_product_info(product):
 
     details_link = product.find('a').get('href')
 
-    is_available = scrape_product_details(details_link)
+    detailed_info = scrape_product_details(details_link)
 
     return {
         'name': item_name,
@@ -83,7 +83,7 @@ def extract_product_info(product):
         'previous_price': previous_price,
         'first_image': first_image,
         'second_image': second_image,
-        'is_available': is_available
+        'details': detailed_info
     }
 
 def scrape_category_page(category_url):
