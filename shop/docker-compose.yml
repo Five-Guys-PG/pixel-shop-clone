@@ -2,13 +2,16 @@ services:
 
   mysql:
     image: mysql:5.7
-    restart: unless-stopped
+    #    restart: unless-stopped
     env_file: .env
     networks:
       - prestashop_network
+    volumes:
+      - dbdata:/var/lib/mysql
 
   prestashop:
     image: prestashop/prestashop:1.7.8
+    platform: linux/x86_64
     restart: unless-stopped
     depends_on:
       - mysql
@@ -17,6 +20,11 @@ services:
     env_file: .env
     networks:
       - prestashop_network
+    volumes:
+      - ./prestashop:/var/www/html
+
+volumes:
+  dbdata:
 
 networks:
   prestashop_network:
