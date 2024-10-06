@@ -1,0 +1,22 @@
+services:
+
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - prestashop_network
+
+  prestashop:
+    image: prestashop/prestashop:1.7.8
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    ports:
+      - 8888:80
+    env_file: .env
+    networks:
+      - prestashop_network
+
+networks:
+  prestashop_network:
