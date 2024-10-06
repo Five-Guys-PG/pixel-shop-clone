@@ -1,7 +1,12 @@
 import requests
 from bs4 import BeautifulSoup
+import json
+import os
 
 site_url = 'https://pixel-shop.pl'
+
+
+
 
 def scrape_delivery_info(delivery_div):
     delivery_data = []
@@ -28,6 +33,23 @@ def scrape_delivery_info(delivery_div):
 
     return delivery_data
 
+def scrape_product_enlarge_image(product_url):
+    full_url = site_url + product_url
+    response = requests.get(full_url)
+    
+    if response.status_code == 200:
+        product_soup = BeautifulSoup(response.content, 'html.parser')
+
+         # Zlokalizuj link do powiększonego zdjęcia
+        enlarged_image_tag = product_soup.find('a', class_='js__gallery-anchor-image')
+        enlarged_image_link = site_url + enlarged_image_tag.get('href') if enlarged_image_tag else 'No enlarged image found'
+        
+        return enlarged_image_link
+    else:
+        print(f"Failed to retrieve {full_url}. Status code: {response.status_code}")
+        return None
+
+
 def scrape_product_details(product_url):
     full_url = site_url + product_url
     response = requests.get(full_url)
@@ -47,7 +69,7 @@ def scrape_product_details(product_url):
 
         # Extract product description
         description_div = product_soup.find('div', class_='resetcss', itemprop='description')
-        description = description_div.get_text(strip=True) if description_div else 'No description'
+        description = description_div.get_text(separator=" ", strip=True) if description_div else 'No description'
 
         return {
             'is_available': is_available,
@@ -71,9 +93,10 @@ def extract_product_info(product):
 
     img_tag = product.find('img')
     first_image = site_url + img_tag.get('data-src') if img_tag and img_tag.get('data-src') else 'Image not found'
-    second_image = site_url + img_tag.get('data-src-alt') if img_tag and img_tag.get('data-src-alt') else 'Image not found'
-
+    
     details_link = product.find('a').get('href')
+    
+    second_image = scrape_product_enlarge_image(details_link)
 
     detailed_info = scrape_product_details(details_link)
 
@@ -89,6 +112,7 @@ def extract_product_info(product):
 def scrape_category_page(category_url):
     full_url = site_url + category_url
     response = requests.get(full_url)
+    scraped_data = []
     
     if response.status_code == 200:
         category_soup = BeautifulSoup(response.content, 'html.parser')
@@ -97,9 +121,30 @@ def scrape_category_page(category_url):
 
         for item in items:
             item_info = extract_product_info(item)
-            print(item_info)
+            scraped_data.append(item_info)
+
+        return scraped_data
     else:
         print(f"Failed to retrieve {full_url}. Status code: {response.status_code}")
+        return []
+
+def save_to_json(data, filename):
+    # Check for existence
+    if os.path.exists(filename):
+        with open(filename, 'r', encoding='utf-8') as f:
+            try:
+                existing_data = json.load(f)
+            except json.JSONDecodeError:
+                existing_data = []  # error
+    else:
+        existing_data = []  # not existing
+
+    # Appending
+    existing_data.extend(data)
+
+    # Save appended data
+    with open(filename, 'w', encoding='utf-8') as f:
+        json.dump(existing_data, f, ensure_ascii=False, indent=4)
 
 # Send a request to the main page
 response = requests.get(site_url)
@@ -109,6 +154,8 @@ if response.status_code == 200:
     soup = BeautifulSoup(response.content, 'html.parser')
 
     submenu_items = soup.find_all('div', class_='submenu level1')
+
+    all_scraped_data = []  # Lista do przechowywania danych o kategoriach
 
     for submenu in submenu_items:
         # For each submenu, find the links
@@ -120,10 +167,21 @@ if response.status_code == 200:
 
             print(f"Scraping category: {category_name}")
             print(f"Link: {category_link}")
-            print('-' * 40)
+            
             
             # Scrape the individual category page
-            scrape_category_page(category_link)
+            category_data = scrape_category_page(category_link)
+
+            # Dodaj kategorię jako listę do głównej listy
+            all_scraped_data.append({
+                'category': category_name,
+                'products': category_data
+            })
+
+            print(f"Zapisano {len(category_data)} produktów do pliku JSON.")
+            # Save the current category data to JSON
+            save_to_json(all_scraped_data[-1:], 'scraped_data.json')  # Zapisz tylko ostatnio dodaną kategorię
+            print('-' * 40)
 
 else:
     print(f"Failed to retrieve the main page. Status code: {response.status_code}")
