@@ -27,5 +27,5 @@ jobs:
         env:
           GITHUB_HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
-          chmod +x ./.github/validate_commit.sh
-          ./.github/validate_commit.sh
+          chmod +x ./.github/validate_commits.sh
+          ./.github/validate_commits.sh
