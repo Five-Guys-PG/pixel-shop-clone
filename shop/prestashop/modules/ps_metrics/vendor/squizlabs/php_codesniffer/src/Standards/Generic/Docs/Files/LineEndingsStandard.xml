@@ -1,0 +1,7 @@
+<documentation title="Line Endings">
+    <standard>
+    <![CDATA[
+    Unix-style line endings are preferred ("\n" instead of "\ps_metrics_module_v4_0_6\r\n").
+    ]]>
+    </standard>
+</documentation>
