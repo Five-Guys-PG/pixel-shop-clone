@@ -1,0 +1,19 @@
+#!/usr/bin/env php
+<?php 
+declare (strict_types=1);
+namespace ps_metrics_module_v4_0_6;
+
+// OK, it's not, let give Composer autoloader a try!
+$autoloadFile = __DIR__ . '/../../../autoload.php';
+if (\file_exists($autoloadFile)) {
+    require_once $autoloadFile;
+} else {
+    require_once __DIR__ . '/../vendor/autoload.php';
+}
+use Symfony\Component\Console\Application;
+use ps_metrics_module_v4_0_6\PrestaShop\CodingStandards\Command\CsFixerInitCommand;
+use ps_metrics_module_v4_0_6\PrestaShop\CodingStandards\Command\PhpStanInitCommand;
+$app = new Application();
+$app->add(new CsFixerInitCommand());
+$app->add(new PhpStanInitCommand());
+$app->run();
