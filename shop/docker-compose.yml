@@ -22,6 +22,16 @@ services:
       - prestashop_network
     volumes:
       - ./prestashop:/var/www/html
+  
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 9999:80
+    depends_on:
+      - mysql
+    env_file: .env
+    networks:
+      - prestashop_network
 
 volumes:
   dbdata:
