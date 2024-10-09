@@ -1,4 +1,4 @@
 .env
-
+!prestashop/modules/*/.env
 prestashop/var/cache/prod/*
 !prestashop/var/cache/prod/.gitkeep
