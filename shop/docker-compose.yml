@@ -18,6 +18,8 @@ services:
     ports:
       - 8888:80
     env_file: .env
+    environment:
+      - PS_INSTALL_AUTO=1
     networks:
       - prestashop_network
     volumes:
