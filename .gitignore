@@ -3,4 +3,4 @@
 prestashop/var/cache/prod/*
 prestashop/var/log/*
 
-.env
+/.env
