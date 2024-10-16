@@ -6,7 +6,6 @@ npm-debug.log.*
 .sass-cache/
 /cache/*
 download/*
-/img/*
 /log/*
 /upload/*
 /vendor/*
