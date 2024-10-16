@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>sfkpreloader</name>
+    <displayName><![CDATA[SFK Preloader - Page Loading Image - Page Loading Animation - Preloading Screen - Loading Page.]]></displayName>
+    <version><![CDATA[2.0.0]]></version>
+    <description><![CDATA[The module helps to add image on all website pages a preloader, also known, as a loading page, or preloading screen it&rsquo;s the loading animation or static image that shows on the website while the page is loading in the background.]]></description>
+    <author><![CDATA[Shahab]]></author>
+    <tab><![CDATA[front_office_features]]></tab>
+	<confirmUninstall><![CDATA[Are you sure you want to remove this module?]]></confirmUninstall>
+    <is_configurable>0</is_configurable>
+    <need_instance>0</need_instance>
+	<limited_countries></limited_countries>
+</module>
