@@ -9,6 +9,15 @@
 cd shop
 ```
 
+- Create ```.env``` file 
+
+Threre is ```.env.sample``` file which can be used as a template 
+for your environment file 
+```
+cp .env.sample .env
+```
+Then edit .env file and set secure password for db and admin url
+
 - Start docker containers
 
 ```

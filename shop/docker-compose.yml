@@ -20,6 +20,7 @@ services:
     env_file: .env
     environment:
       - PS_INSTALL_AUTO=1
+      - DB_SERVER=mysql
     networks:
       - prestashop_network
     volumes:
@@ -32,6 +33,8 @@ services:
     depends_on:
       - mysql
     env_file: .env
+    environment:
+      - PMA_HOST=mysql
     networks:
       - prestashop_network
 
