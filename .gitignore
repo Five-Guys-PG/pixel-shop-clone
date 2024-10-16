@@ -1,0 +1,6 @@
+.DS_Store
+
+prestashop/var/cache/prod/*
+prestashop/var/log/*
+
+.env
