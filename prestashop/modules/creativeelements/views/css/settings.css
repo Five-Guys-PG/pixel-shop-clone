@@ -1,0 +1,10 @@
+.bootstrap .page-head .toolbarBox .btn-toolbar .toolbar_btn i {
+	background-color: inherit;
+}
+
+.admincesettings.modal-open {
+	overflow: auto;
+}
+.admincesettings .modal {
+	overflow-y: hidden;
+}
