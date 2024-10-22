@@ -3,3 +3,6 @@
 prestashop/var/
 
 /.env
+
+utils/venv
+utils/.env
