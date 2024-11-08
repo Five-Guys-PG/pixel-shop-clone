@@ -1,12 +1,4 @@
-/* Start custom CSS for html, class: .elementor-element-b13cff3 */@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap'); 
-@font-face { 
-  font-family:"uni";
-  src:url("https://pixel-shop.pl/skins/user/rwd_shoper_43/images/user/uni0553-webfont.ttf");
-  src:url("https://pixel-shop.pl/skins/user/rwd_shoper_43/images/user/uni0553-webfont.eot");
-  src:url("https://pixel-shop.pl/skins/user/rwd_shoper_43/images/user/uni0553-webfont.woff");
-} 
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap'); 
-  body {  
+.elementor-3170101 .elementor-element.elementor-element-ec84237 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial, .elementor-widget__width-calc):not(:last-child):not(.elementor-absolute){margin-bottom:0px;}.elementor-3170101 .elementor-element.elementor-element-b13cff3 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-3170101 .elementor-element.elementor-element-39dfe3b > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-3170101 .elementor-element.elementor-element-39dfe3b{width:100%;max-width:100%;}@media(min-width:768px){.elementor-3170101 .elementor-element.elementor-element-ec84237{width:100%;}}/* Start custom CSS for html, class: .elementor-element-b13cff3 */body {  
     font-size:100%;
     background:linear-gradient(90deg, #020024 0%, #b411f4 100%);
     font-family:"Roboto Mono",monospace;
@@ -1093,6 +1085,11 @@ a:hover img {
 }  
 #style-TzoMK.style-TzoMK {  
    transform: translate(28px, 0px);  
+}  
+
+.elementor-column-wrap {
+    margin: 0;
+    padding: 0;
 }/* End custom CSS */
 /* Start custom CSS for html, class: .elementor-element-39dfe3b */@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap'); 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap'); 
@@ -2450,4 +2447,22 @@ a:hover img {
 #style-Uka8H.style-Uka8H {  
    width: calc(25% + 0px);  
     margin: 0px;  
+}  
+
+/* Edit this zalupa to manioulate blick's width */
+#snipcss-UJkhO {
+    width: 110vw; 
+    position: relative; 
+    left: 57%; 
+    transform: translateX(-50%); 
+    margin-left: calc(10px - 5vw); 
+    padding: 0; 
+}
+
+.elementor-column-wrap {
+    padding: 0 !important;
+}
+
+.text-white {
+    text-color: white;
 }/* End custom CSS */
