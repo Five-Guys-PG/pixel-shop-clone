@@ -1,0 +1,352 @@
+.elementor-2170101 .elementor-element.elementor-element-169389b > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial, .elementor-widget__width-calc):not(:last-child):not(.elementor-absolute){margin-bottom:0px;}.elementor-2170101 .elementor-element.elementor-element-e495148{width:100vw;max-width:100vw;}@media(min-width:768px){.elementor-2170101 .elementor-element.elementor-element-169389b{width:100%;}}/* Start custom CSS for html, class: .elementor-element-e495148 */@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:100,200,300,400,500,600,700,100i,200i,300i,400i,500i,600i,700i&display=swap'); 
+  body {  
+    font-size:100%;
+    background:linear-gradient(90deg, #020024 0%, #b411f4 100%);
+    font-family:"Roboto Mono",monospace;
+    color:#000656;
+    line-height:18px;
+  }  
+div { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+body { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+body { 
+    font-family: 'Roboto',sans-serif; 
+    color: #000656; 
+    background-color: #fff; 
+    font-size: 16px; 
+    line-height: 18px;
+} 
+
+body { 
+    position: static !important; 
+    overflow-x: hidden;
+} 
+
+body { 
+    font-family: "Roboto Mono",monospace;
+} 
+
+html { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+html { 
+    font-size: 100%; 
+    -webkit-text-size-adjust: 100%; 
+    -ms-text-size-adjust: 100%;
+} 
+
+footer { 
+    display: block;
+} 
+
+footer { 
+    margin-bottom: 10px; 
+    padding-bottom: 0.5em;
+    
+    width: 110vw; 
+    position: relative; 
+    left: 55%; 
+    transform: translateX(-50%); 
+    margin-left: calc(10px - 5vw); 
+    padding: 0; 
+    background: #000656;
+} 
+
+footer.footer.row { 
+    margin-bottom: 0; 
+    padding: 0; 
+    background: #000656;
+}
+
+.row:before,.box:before,.product:before,.s-row:before,.row:after,.box:after,.product:after,.s-row:after { 
+    display: table; 
+    line-height: 0; 
+    content: '';
+} 
+
+.row:after,.box:after,.product:after,.s-row:after { 
+    clear: both;
+} 
+
+.container { 
+    max-width: 1180px; 
+    width: 100%; 
+    margin-right: auto; 
+    margin-left: auto;
+} 
+
+.container:before,.container:after { 
+    display: table; 
+    line-height: 0; 
+    content: '';
+} 
+
+.container:after { 
+    clear: both;
+} 
+
+ul { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+ul { 
+    margin-left: 0; 
+    list-style: none;
+} 
+
+.innerfooter ul.overall  { 
+    margin: 0;
+} 
+
+.box { 
+    position: relative; 
+    margin: 0 0 20px 0;
+} 
+
+#pixel_footer { 
+    display: flex; 
+    padding: 40px 0;
+} 
+
+li { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+ul li  { 
+    line-height: 20px; 
+    margin-bottom: 0;
+} 
+
+.flex { 
+    display: block; 
+    float: left; 
+    min-height: 30px; 
+    -webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+    box-sizing: border-box;
+} 
+
+.innerfooter ul li  { 
+    padding: .2em 0; 
+    cursor: pointer;
+} 
+
+.flex.flex-2 { 
+    width: 50%;
+} 
+
+footer .innerfooter ul.overall > li  { 
+    border-top: 2px solid; 
+    padding-top: 2.5em; 
+    margin-top: 0.5em;
+} 
+
+.innerfooter ul:first-child li  { 
+    border-left: 0;
+} 
+
+footer.footer.row .innerfooter .overall li.overall  { 
+    cursor: default; 
+    border: 0; 
+    margin: 0; 
+    padding-bottom: 40px; 
+    width: 25%;
+} 
+
+#pixel_footer div  { 
+    display: flex; 
+    flex-direction: column;
+} 
+
+#pixel_footer div:first-child  { 
+    margin-right: 30px;
+} 
+
+footer .innerfooter ul.overall ul::after { 
+    display: table; 
+    line-height: 0; 
+    content: "";
+} 
+
+footer.footer.row #footerSocials  { 
+    margin-top: 30px;
+} 
+
+span { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+#pixel_footer span  { 
+    color: #fff; 
+    margin-bottom: 30px;
+} 
+
+img { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+img { 
+    max-width: 100%; 
+    vertical-align: middle; 
+    border: 0; 
+    -ms-interpolation-mode: bicubic;
+} 
+
+#pixel_footer .pixel_footer_arrow_box  { 
+    flex-direction: row;
+} 
+
+.innerfooter ul li.head  { 
+    padding-top: 0; 
+    padding-bottom: 15px; 
+    font-weight: 700; 
+    background-color: #fff; 
+    margin-bottom: 1px; 
+    position: relative; 
+    display: block;
+} 
+
+.innerfooter ul.overall ul li  { 
+    clear: both;
+} 
+
+footer.footer.row .innerfooter .overall .head  { 
+    cursor: default; 
+    color: #00f0f0; 
+    background: #000656;
+} 
+
+footer .innerfooter ul.overall ul li::after { 
+    display: table; 
+    line-height: 0; 
+    content: "";
+} 
+
+a { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+a { 
+    color: #00f0f0; 
+    text-decoration: none;
+} 
+
+#pixel_footer .pixel_footer_arrow_box a  { 
+    margin-left: 49px;
+} 
+
+a:hover,a:active { 
+    outline: 0;
+} 
+
+a:hover { 
+    color: #00f0f0;
+} 
+
+footer.footer.row .innerfooter .overall li a  { 
+    color: #fff;
+} 
+
+footer.footer.row #footerSocials a  { 
+    color: #00f0f0;
+} 
+
+a:hover img { 
+    text-decoration: none;
+} 
+
+.innerfooter ul li a img  { 
+    display: none;
+} 
+
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-41vNv.style-41vNv {  
+   display: block;  
+}  
+
+#shoper-foot { 
+    position: relative;
+    left: -22%;
+    text-align: center; 
+    background-color: #f5f5f5; 
+    padding: 5px 0;
+} 
+
+#shoper-foot { 
+    display: block; 
+    background: #000656; 
+    padding-bottom: 30px;
+} 
+
+#shoper-foot .container > * { 
+    text-align: left; 
+    float: left;
+} 
+
+#shoper-foot .container div  { 
+    width: 50%;
+} 
+
+#shoper-foot .container div:first-child  { 
+    color: #fff; 
+    width: 25%;
+} 
+
+#shoper-foot .container a  { 
+    color: #fff; 
+    width: 25%;
+} 
+
+#shoper-foot .container .footerSymbols  { 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center;
+}/* End custom CSS */
