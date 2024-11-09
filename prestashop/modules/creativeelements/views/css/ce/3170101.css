@@ -1,4 +1,172 @@
-.elementor-3170101 .elementor-element.elementor-element-ec84237 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial, .elementor-widget__width-calc):not(:last-child):not(.elementor-absolute){margin-bottom:0px;}.elementor-3170101 .elementor-element.elementor-element-b13cff3 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-3170101 .elementor-element.elementor-element-39dfe3b > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-3170101 .elementor-element.elementor-element-39dfe3b{width:100%;max-width:100%;}@media(min-width:768px){.elementor-3170101 .elementor-element.elementor-element-ec84237{width:100%;}}/* Start custom CSS for html, class: .elementor-element-b13cff3 */body {  
+.elementor-3170101 .elementor-element.elementor-element-3ef8373 > .elementor-background-overlay{background-color:transparent;background-image:linear-gradient(90deg, #020024 0%, #B411F4 100%);opacity:1;}.elementor-3170101 .elementor-element.elementor-element-2dd0a12 .elementor-image-carousel .swiper-slide-image{border-style:solid;border-width:3px 3px 3px 3px;border-color:#A76EE4;}.elementor-3170101 .elementor-element.elementor-element-2dd0a12 .elementor-image-carousel-caption{text-align:center;}.elementor-3170101 .elementor-element.elementor-element-2dd0a12 figcaption{margin-top:0px;}.elementor-3170101 .elementor-element.elementor-element-2dd0a12 .swiper-pagination-bullet{width:10px;height:10px;background:#7AC1FF;}.elementor-3170101 .elementor-element.elementor-element-2dd0a12 .swiper-pagination-bullet:not(.swiper-pagination-bullet-active){background:#181856;opacity:1;}.elementor-3170101 .elementor-element.elementor-element-2dd0a12 > .elementor-widget-container{border-style:solid;}.elementor-3170101 .elementor-element.elementor-element-ec84237 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial, .elementor-widget__width-calc):not(:last-child):not(.elementor-absolute){margin-bottom:0px;}.elementor-3170101 .elementor-element.elementor-element-b13cff3 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-3170101 .elementor-element.elementor-element-39dfe3b > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;}.elementor-3170101 .elementor-element.elementor-element-39dfe3b{width:100%;max-width:100%;}@media(min-width:768px){.elementor-3170101 .elementor-element.elementor-element-ec84237{width:100%;}}/* Start custom CSS for html, class: .elementor-element-fd5d238 */.box { 
+    position: relative; 
+    margin: 0 0 20px 0;
+} 
+
+#pixel_benefits_boxes { 
+    width: 100vw; 
+    position: relative; 
+    left: 50%; 
+    margin-left: -50vw; 
+    margin-bottom: 100px; 
+    background: linear-gradient(90deg, #020024 0%, #b411f4 100%); 
+    background-repeat: no-repeat; 
+    background-size: 100% 400px;
+} 
+
+.row:before,.box:before,.product:before,.s-row:before,.row:after,.box:after,.product:after,.s-row:after { 
+    display: table; 
+    line-height: 0; 
+    content: '';
+} 
+
+.row:after,.box:after,.product:after,.s-row:after { 
+    clear: both;
+} 
+
+#pixel_benefits_boxes .container  { 
+    display: flex; 
+    justify-content: space-between;
+} 
+
+.container:before,.container:after { 
+    display: table; 
+    line-height: 0; 
+    content: '';
+} 
+
+#pixel_benefits_boxes .container::after, #pixel_benefits_boxes .container::before { 
+    display: none;
+} 
+
+.container:after { 
+    clear: both;
+} 
+
+a { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+a { 
+    color: #00f0f0; 
+    text-decoration: none;
+} 
+
+#pixel_benefits_boxes .container .box_square  { 
+    margin-top: 60px; 
+    padding: 6px; 
+    box-sizing: border-box; 
+    width: 370px; 
+    height: 400px; 
+    transition: 0.2s; 
+    background: #00f0f0; 
+    background-clip: content-box,padding-box; 
+    border-style: solid; 
+    border-width: 4px; 
+    border-image: conic-gradient(#b411f4, #00f0f0, #b411f4) 1; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+} 
+
+a:hover,a:active { 
+    outline: 0;
+} 
+
+a:hover { 
+    color: #00f0f0;
+} 
+
+#pixel_benefits_boxes .container .box_square:hover { 
+    background: #000656; 
+    background-clip: content-box,padding-box;
+} 
+
+#pixel_benefits_boxes .container .box_square .box_thumbnail  { 
+    height: 270px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+} 
+
+#pixel_benefits_boxes .container .box_square .box_text  { 
+    text-align: center; 
+    padding: 0 20px;
+} 
+
+#pixel_benefits_boxes .container .box_square .box_thumbnail svg  { 
+    filter: invert(9%) sepia(53%) saturate(5336%) hue-rotate(232deg) brightness(81%) contrast(120%);
+} 
+
+h4 { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+h4 { 
+    margin: 10px 0 0; 
+    font-family: inherit; 
+    font-weight: normal; 
+    line-height: 21px; 
+    color: #000656;
+} 
+
+h4 { 
+    font-size: 1.4em; 
+    margin-bottom: 0.8em;
+} 
+
+h4 { 
+    font-family: "Roboto Mono",monospace;
+} 
+
+.resetcss h4 { 
+    line-height: initial; 
+    font-weight: bold;
+} 
+
+.resetcss h4 { 
+    font-size: 1em; 
+    margin: 1.33em 0;
+} 
+
+#pixel_benefits_boxes .container .box_square .box_text h4  { 
+    text-transform: uppercase; 
+    font-size: 24px; 
+    margin: 0 0 20px 0;
+} 
+
+span { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+#pixel_benefits_boxes .container .box_square .box_text span  { 
+    color: #000656; 
+    text-transform: uppercase;
+} 
+
+ #pixel_benefits_boxes .container .box_square:hover .box_text span { 
+    color: #00f0f0;
+} 
+
+#pixel_benefits_boxes .container .box_square:hover .box_text h4, #pixel_benefits_boxes .container .box_square:hover .box_text span { 
+    color: #00f0f0;
+}/* End custom CSS */
+/* Start custom CSS for html, class: .elementor-element-b13cff3 */body {  
     font-size:100%;
     background:linear-gradient(90deg, #020024 0%, #b411f4 100%);
     font-family:"Roboto Mono",monospace;
