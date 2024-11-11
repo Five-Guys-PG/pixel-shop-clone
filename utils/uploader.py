@@ -5,6 +5,10 @@ from pathlib import Path
 
 import httpx
 from jinja2 import Environment, FileSystemLoader
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 API_KEY = os.environ.get("API_KEY")
 
@@ -19,6 +23,11 @@ DATA_FILE = Path(__file__).parent.parent / "scrapper" / "scraped_data_category.j
 XML_TEMPLATES_DIR = Path(__file__).parent / "xml_templates"
 
 CATEGORY_API_ENDPOINT = f"{PRESTA_URL}/api/categories"
+
+
+def debug_print(message: str) -> None:
+    if os.environ.get("DEBUG"):
+        print(message)
 
 
 class PrestaItem:
@@ -69,9 +78,11 @@ class Uploader:
             return category
 
     async def create_categories(self):
+        debug_print("Starting uploading categories")
         create_category_tasks = [
-            self.create_category(category) for category in self._data["categories"]
+            self.create_category(category) for category in self._data
         ]
+        debug_print(f"Found {len(create_category_tasks)} categories")
         await asyncio.gather(*create_category_tasks)
 
     async def run_all(self) -> None:
@@ -80,3 +91,6 @@ class Uploader:
 
 if __name__ == "__main__":
     uploader = Uploader(api_key=API_KEY)
+    uploader.load_data_from_file(DATA_FILE)
+
+    asyncio.run(uploader.run_all())
