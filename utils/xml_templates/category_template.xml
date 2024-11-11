@@ -8,6 +8,6 @@
             <language id="1"><![CDATA[{{ name }}]]></language>
         </link_rewrite>
         <active>1</active>
-        <id_parent>2</id_parent>
+        <id_parent>1</id_parent>
     </category>
 </prestashop>
