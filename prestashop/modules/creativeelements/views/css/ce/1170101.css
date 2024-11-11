@@ -1,4 +1,4 @@
-.elementor-1170101 .elementor-element.elementor-element-21d06cc{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-1170101 .elementor-element.elementor-element-26049d4 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;background-color:#000656;}.elementor-1170101 .elementor-element.elementor-element-776706d{transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;}.elementor-1170101 .elementor-element.elementor-element-776706d > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1170101 .elementor-element.elementor-element-9af7bb5 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;background-color:transparent;background-image:linear-gradient(90deg, #020024 0%, #B411F4 100%);}.elementor-1170101 .elementor-element.elementor-element-9af7bb5{width:100%;max-width:100%;}.elementor-1170101 .elementor-element.elementor-element-4a6cd46 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial, .elementor-widget__width-calc):not(:last-child):not(.elementor-absolute){margin-bottom:0px;}.elementor-1170101 .elementor-element.elementor-element-177fa9a > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;background-color:transparent;background-image:linear-gradient(90deg, #020024 0%, #B411F4 100%);}.elementor-1170101 .elementor-element.elementor-element-177fa9a{width:101.93%;max-width:101.93%;}#header{box-shadow:0px 0px 0px 0px rgba(0,0,0,0.5);}@media(min-width:768px){.elementor-1170101 .elementor-element.elementor-element-4a6cd46{width:100%;}}/* Start custom CSS for html, class: .elementor-element-26049d4 */ul { 
+.elementor-1170101 .elementor-element.elementor-element-21d06cc{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-1170101 .elementor-element.elementor-element-26049d4 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;background-color:#000656;}.elementor-1170101 .elementor-element.elementor-element-776706d{transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-1170101 .elementor-element.elementor-element-776706d > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}.elementor-1170101 .elementor-element.elementor-element-9af7bb5 > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;background-color:transparent;background-image:linear-gradient(90deg, #020024 0%, #B411F4 100%);}.elementor-1170101 .elementor-element.elementor-element-9af7bb5{width:100%;max-width:100%;}.elementor-1170101 .elementor-element.elementor-element-8a893c6{margin-top:0px;margin-bottom:0px;padding:0px 0px 0px 0px;}.elementor-1170101 .elementor-element.elementor-element-4a6cd46 > .elementor-column-wrap > .elementor-widget-wrap > .elementor-widget:not(.elementor-widget__width-auto):not(.elementor-widget__width-initial, .elementor-widget__width-calc):not(:last-child):not(.elementor-absolute){margin-bottom:0px;}.elementor-1170101 .elementor-element.elementor-element-177fa9a > .elementor-widget-container{margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;background-color:transparent;background-image:linear-gradient(90deg, #020024 0%, #B411F4 100%);}.elementor-1170101 .elementor-element.elementor-element-177fa9a{width:101.93%;max-width:101.93%;}#header{box-shadow:0px 0px 0px 0px rgba(0,0,0,0.5);}@media(min-width:768px){.elementor-1170101 .elementor-element.elementor-element-4a6cd46{width:100%;}}/* Start custom CSS for html, class: .elementor-element-26049d4 */ul { 
     margin: 0; 
     padding: 0; 
     border: 0; 
@@ -1507,4 +1507,20 @@ ul.level1 > li > h3 > a:hover > span {
     height: 2px; 
     background-color: white;
     margin-top: 7px; 
+}
+
+.showMoreLicences {
+    color: #00F0F0 !important;
+}
+
+.showMoreLicences:hover {
+    text-decoration: underline !important;
+} 
+
+.price .zow input {
+    position: absolute;
+    left: -9999px;
+}/* End custom CSS */
+/* Start custom CSS for section, class: .elementor-element-8a893c6 */.elementor-column-wrap {
+    padding: 0 !important;
 }/* End custom CSS */
