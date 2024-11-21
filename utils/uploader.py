@@ -2,7 +2,6 @@ import json
 import os
 import random
 from pathlib import Path
-from typing import Any, Coroutine
 
 import httpx
 from dotenv import load_dotenv
@@ -22,10 +21,12 @@ PRESTA_URL = (
     os.environ["PRESTA_URL"] if "PRESTA_URL" in os.environ else "http://localhost:8080"
 )
 DATA_FILE = Path(__file__).parent.parent / "scrapper" / "scraped_data_category.json"
+IMAGE_DIR = Path(__file__).parent.parent / "scrapper" / "images"
 XML_TEMPLATES_DIR = Path(__file__).parent / "xml_templates"
 
 CATEGORY_API_ENDPOINT = f"{PRESTA_URL}/api/categories"
 PRODUCT_API_ENDPOINT = f"{PRESTA_URL}/api/products"
+IMAGE_API_ENDPOINT = f"{PRESTA_URL}/api/images/products"
 
 
 def debug_print(message: str) -> None:
@@ -74,8 +75,10 @@ class Product(PrestaItem):
 
         self.name = product_json["name"]
         self.price = float(product_json["price"].split("\xa0")[0].replace(",", "."))
-        self.description = product_json.get("description", "")
+        self.description = product_json["details"]["description"]
         self.ean13 = "".join([str(random.randint(0, 9)) for _ in range(13)])
+        self.first_image = product_json["first_image"].split("/")[-1]
+        self.second_image = product_json["details"]["second image"].split("/")[-1]
 
     def to_xml(self):
         template = PrestaItem.jinja_env.get_template("product_template.xml")
@@ -111,6 +114,15 @@ class Uploader:
         with open(filename, "r") as json_file:
             self._data = json.load(json_file)
 
+    def upload_product_images(self, product: Product):
+        for image, type in [
+            (product.first_image, "image/webp"),
+            (product.second_image, "image/jpeg"),
+        ]:
+            with open(IMAGE_DIR / image, "rb") as first_image:
+                files = {"image": (image, first_image, "image/jpeg")}
+                self._client.post(IMAGE_API_ENDPOINT + f"/{product.id}", files=files)
+
     def create_product(self, product_json: dict, category: Category):
         product = Product(product_json, category)
         product_xml = product.to_xml()
@@ -119,11 +131,10 @@ class Uploader:
             content=product_xml.encode("utf-8"),
         )
         product.set_id_from_response(response.json())
-        return product
 
-    def create_subcategory(
-        self, subcategory_json: dict, parent: Category
-    ):
+        self.upload_product_images(product)
+
+    def create_subcategory(self, subcategory_json: dict, parent: Category):
         subcategory = Subcategory(subcategory_json["subcategory"], parent)
         subcategory_xml = subcategory.to_xml()
         response = self._client.post(
@@ -133,7 +144,7 @@ class Uploader:
         subcategory.set_id_from_response(response.json())
         if "products" not in subcategory_json:
             return
-        print('Adding products to ' + subcategory.name)
+        print("Adding products to " + subcategory.name)
         for product in tqdm(subcategory_json["products"]):
             self.create_product(product, subcategory)
 
@@ -151,7 +162,8 @@ class Uploader:
 
     def run_all(self) -> None:
         for category in self._data:
-            self.create_category(category) 
+            self.create_category(category)
+
 
 if __name__ == "__main__":
     uploader = Uploader(api_key=API_KEY)
