@@ -17,6 +17,11 @@ source .env
 
 # Copy the SQL file into the container
 echo "Copying '$1' to the MySQL container..."
+
+# Replace env variables' keys with their values
+sed -i -e "s/\$MAIL_USER/$MAIL_USER/g" $1
+sed -i -e "s/\$MAIL_PASS/$MAIL_PASS/g" $1
+
 docker compose cp "$1" mysql:/tmp/backup.sql
 
 # Check if the file was copied successfully
