@@ -6,25 +6,29 @@ services:
     env_file: .env
     volumes:
       - dbdata:/var/lib/mysql 
-    networks:
-      - prestashop_network
   prestashop:
     image: prestashop/prestashop:1.7.8
     platform: linux/x86_64
     restart: unless-stopped
     depends_on:
       - mysql
-    ports:
-      - 8080:80
     env_file: .env
     environment:
       DB_SERVER: mysql
       PS_INSTALL_AUTO: 0
+      PS_DOMAIN: localhost:8001
+    ports:
+      - 8080:80
     volumes:
       - ./prestashop:/var/www/html
-    networks:
-      - prestashop_network
-networks:
-    prestashop_network:
+  proxy:
+    build: ./ssl-proxy
+    depends_on:
+      - prestashop
+    environment:
+      PRESTA_URL: http://prestashop
+      DOMAIN: localhost:8081
+    ports:
+      - 8081:80
 volumes:
   dbdata:
