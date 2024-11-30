@@ -3,3 +3,5 @@
 prestashop/var/
 
 /.env
+
+ssl/*.pem
