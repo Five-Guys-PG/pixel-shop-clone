@@ -1,0 +1,255 @@
+/* Start custom CSS for html, class: .elementor-element-1e134cd */#pixel-table {
+    background: transparent; 
+    border-collapse: collapse; 
+    border-color: transparent; 
+    border-spacing: 0; 
+    border-width: 0; 
+    font-size: 100%; 
+    margin: 0; 
+    outline: 0; 
+    padding: 0;
+} 
+
+#pixel-table { 
+    border-collapse: initial;
+} 
+
+#pixel-table tbody { 
+    background: transparent; 
+    border-collapse: collapse; 
+    border-color: transparent; 
+    border-spacing: 0; 
+    border-width: 0; 
+    font-size: 100%; 
+    margin: 0; 
+    outline: 0; 
+    padding: 0;
+} 
+
+#pixel-table tr { 
+    background: transparent; 
+    border-collapse: collapse; 
+    border-color: transparent; 
+    border-spacing: 0; 
+    border-width: 0; 
+    font-size: 100%; 
+    margin: 0; 
+    outline: 0; 
+    padding: 0;
+} 
+
+#pixel-table tr  { 
+    border-collapse: initial;
+} 
+
+#pixel-table tr:hover ,#pixel-table tr:first-child  { 
+    background: #000656; 
+    color: #fff;
+} 
+
+#pixel-table td { 
+    background: transparent; 
+    border-collapse: collapse; 
+    border-color: transparent; 
+    border-spacing: 0; 
+    border-width: 0; 
+    font-size: 100%; 
+    margin: 0; 
+    outline: 0; 
+    padding: 0;
+} 
+
+#pixel-table td  { 
+    border-collapse: initial;
+} 
+
+#pixel-table p { 
+    margin: 0; 
+    padding: 10px 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+    color: #000656;
+}
+
+#pixel-table tr:hover p {
+    color: white;
+}
+
+#pixel-table .box_infopage p { 
+    margin-bottom: 1em;
+} 
+
+#pixel-table .resetcss p { 
+    margin: 1em 0;
+} 
+
+#pixel-table .resetcss p { 
+    line-height: 22px;
+} 
+
+#pixel-table strong { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+#pixel-table strong { 
+    font-weight: 700;
+} 
+
+#pixel-table tr:hover  { 
+    background: #000656; 
+    color: #fff;
+} 
+
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-DxUe5.style-DxUe5 {  
+   text-align: center;  
+}  
+#style-c2ymy.style-c2ymy {  
+   height: 304px;  
+    width: 100%;  
+    background: transparent;  
+    border: 2px solid #000000;  
+}  
+#style-4YZ6L.style-4YZ6L {  
+   height: 44px;  
+}  
+#style-alGex.style-alGex {  
+   width: 168px;  
+    height: 44px;  
+}  
+#style-2Mtb2.style-2Mtb2 {  
+   width: 168px;  
+    height: 44px;  
+}  
+#style-WLOmR.style-WLOmR {  
+   width: 168px;  
+    height: 44px;  
+}  
+#style-p2IEl.style-p2IEl {  
+   width: 168px;  
+    height: 44px;  
+}  
+#style-8Jvr4.style-8Jvr4 {  
+   width: 168px;  
+    height: 44px;  
+}  
+#style-3bci5.style-3bci5 {  
+   width: 168px;  
+}  
+#style-W9SA2.style-W9SA2 {  
+   width: 168px;  
+}  
+#style-bVZOI.style-bVZOI {  
+   width: 168px;  
+}  
+#style-58XXN.style-58XXN {  
+   width: 168px;  
+}  
+#style-SeQEK.style-SeQEK {  
+   width: 168px;  
+}  
+#style-N9oOZ.style-N9oOZ {  
+   height: 61px;  
+}  
+#style-Af6wO.style-Af6wO {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-TaRFZ.style-TaRFZ {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-6hyX7.style-6hyX7 {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-aIwDa.style-aIwDa {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-I7IlQ.style-I7IlQ {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-lEgLv.style-lEgLv {  
+   height: 61px;  
+}  
+#style-WJT6o.style-WJT6o {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-9DeaS.style-9DeaS {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-dsens.style-dsens {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-o5m3I.style-o5m3I {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-Kcwer.style-Kcwer {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-sJIxd.style-sJIxd {  
+   height: 61px;  
+}  
+#style-nArLj.style-nArLj {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-vtoLL.style-vtoLL {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-UXNkw.style-UXNkw {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-tlj5s.style-tlj5s {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-bfnAg.style-bfnAg {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-K1yWZ.style-K1yWZ {  
+   height: 61px;  
+}  
+#style-fdTHe.style-fdTHe {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-dT18L.style-dT18L {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-4KetH.style-4KetH {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-JnxIn.style-JnxIn {  
+   width: 168px;  
+    height: 61px;  
+}  
+#style-ZgtXv.style-ZgtXv {  
+   width: 168px;  
+    height: 61px;  
+}  
+
+
+#style-4YZ6L p {
+    color: white;
+}/* End custom CSS */
