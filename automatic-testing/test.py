@@ -135,4 +135,7 @@ check_box = driver.find_element(By.NAME, 'psgdpr')
 if not check_box.is_selected():  
     check_box.click()
 
+click_element(By.XPATH, '//button[contains(text(), "Zapisz")]')
+
+#e. Wykonanie zamówienia zawartości koszyka
 
