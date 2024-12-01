@@ -120,17 +120,19 @@ search_box.send_keys('kotek')
 
 search_box = driver.find_element(By.NAME, 'email')
 search_box.clear() 
-search_box.send_keys('kotek') 
+search_box.send_keys('kotek@gmail.com') 
 
 search_box = driver.find_element(By.NAME, 'password')
 search_box.clear() 
-search_box.send_keys('kotek') 
+search_box.send_keys('test1234') 
 
-search_box = driver.find_element(By.NAME, 'customer_privacy')
+check_box = driver.find_element(By.NAME, 'customer_privacy')
+if not check_box.is_selected():  
+    check_box.click()
 
 
-
-search_box = driver.find_element(By.NAME, 'psgdpr')
-
+check_box = driver.find_element(By.NAME, 'psgdpr')
+if not check_box.is_selected():  
+    check_box.click()
 
 
