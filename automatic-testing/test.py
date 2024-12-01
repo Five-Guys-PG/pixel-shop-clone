@@ -55,42 +55,42 @@ def click_element(by, value, timeout=10):
 
 
 #b. Wyszukanie produktu po nazwie i dodanie do koszyka losowego produktu spośród znalezionych 
-# for i in range(5):
-#     driver.get(site_url)
 
-#     search_box = driver.find_element(By.CLASS_NAME, 'search__input')
-#     search_box.clear() 
-#     search_box.send_keys('kotek') 
+# driver.get(site_url)
 
-#     search_box.send_keys(Keys.RETURN) 
+# search_box = driver.find_element(By.CLASS_NAME, 'search__input')
+# search_box.clear() 
+# search_box.send_keys('kotek') 
 
-#     products = driver.find_elements(By.CLASS_NAME, 'thumbnail')
+# search_box.send_keys(Keys.RETURN) 
 
-
-#     if products:
-#         ##random_product = random.choice(products)  
-#         ##random_product.click() 
+# products = driver.find_elements(By.CLASS_NAME, 'thumbnail')
 
 
+# if products:
+#     ##random_product = random.choice(products)  
+#     ##random_product.click() 
 
-#         products[i].click()
+
+
+#     products[0].click()
         
         
-#         button_to_cart = WebDriverWait(driver, 10).until(
-#                 EC.element_to_be_clickable((By.XPATH, '//a[contains(@class, "elementor-button elementor-size-lg")]'))
-#             )
-#         button_to_cart.click()
+#     button_to_cart = WebDriverWait(driver, 10).until(
+#             EC.element_to_be_clickable((By.XPATH, '//a[contains(@class, "elementor-button elementor-size-lg")]'))
+#         )
+#     button_to_cart.click()
 
-#         button_to_continue = WebDriverWait(driver, 10).until(
-#                 EC.element_to_be_clickable((By.XPATH, '//button[contains(@class, "btn btn-secondary") and text()="Kontynuuj zakupy"]'))
-#             )
-#         button_to_continue.click()
+#     button_to_continue = WebDriverWait(driver, 10).until(
+#             EC.element_to_be_clickable((By.XPATH, '//button[contains(@class, "btn btn-secondary") and text()="Kontynuuj zakupy"]'))
+#         )
+#     button_to_continue.click()
        
    
-#     else:
-#         print("Nie znaleziono żadnych produktów!")
+# else:
+#     print("Nie znaleziono żadnych produktów!")
     
-#     time.sleep(0.5)
+
 #c. Usunięcie z koszyka 3 produktów
 # driver.get(site_url)
 
@@ -106,36 +106,110 @@ def click_element(by, value, timeout=10):
 #     time.sleep(1)
     
 #d. Rejestrację nowego konta
-driver.get(site_url)
 
-click_element(By.XPATH, '//*[@title="Zarejestruj się"]')
+# driver.get(site_url)
 
-search_box = driver.find_element(By.NAME, 'firstname')
-search_box.clear() 
-search_box.send_keys('kotek') 
+# click_element(By.XPATH, '//*[@title="Zarejestruj się"]')
 
-search_box = driver.find_element(By.NAME, 'lastname')
-search_box.clear() 
-search_box.send_keys('kotek') 
+# firstname_box = driver.find_element(By.NAME, 'firstname')
+# firstname_box.send_keys('kotek') 
 
-search_box = driver.find_element(By.NAME, 'email')
-search_box.clear() 
-search_box.send_keys('kotek@gmail.com') 
+# lastname_box = driver.find_element(By.NAME, 'lastname')
+# lastname_box.send_keys('kotek') 
 
-search_box = driver.find_element(By.NAME, 'password')
-search_box.clear() 
-search_box.send_keys('test1234') 
+# mail_box = driver.find_element(By.NAME, 'email')
+# mail_box.send_keys('kotek13@gmail.com') 
 
-check_box = driver.find_element(By.NAME, 'customer_privacy')
-if not check_box.is_selected():  
-    check_box.click()
+# pass_box = driver.find_element(By.NAME, 'password')
+# pass_box.send_keys('test1234') 
+
+# check_box = driver.find_element(By.NAME, 'customer_privacy')
+# if not check_box.is_selected():  
+#     check_box.click()
 
 
-check_box = driver.find_element(By.NAME, 'psgdpr')
-if not check_box.is_selected():  
-    check_box.click()
+# check_box = driver.find_element(By.NAME, 'psgdpr')
+# if not check_box.is_selected():  
+#     check_box.click()
 
-click_element(By.XPATH, '//button[contains(text(), "Zapisz")]')
+# click_element(By.XPATH, '//button[contains(text(), "Zapisz")]')
 
 #e. Wykonanie zamówienia zawartości koszyka
+#g. Wybór jednego z dwóch przewoźników
+#h. Zatwierdzenie zamówienia
 
+# click_element(By.XPATH, '//*[@title="Koszyk"]')
+
+# click_element(By.XPATH, '//a[contains(@class, "btn btn-primary")]')
+
+# address_box = driver.find_element(By.NAME, 'address1')
+# address_box.send_keys('kotek') 
+
+# postcode_box = driver.find_element(By.NAME, 'postcode')
+# postcode_box.send_keys('12-345') 
+
+# city_box = driver.find_element(By.NAME, 'city')
+# city_box.send_keys('kotek') 
+
+# click_element(By.NAME, 'confirm-addresses')
+
+# time.sleep(1)
+
+# delivery_box = driver.find_element(By.ID, 'delivery_option_19')
+# if not delivery_box.is_selected():  
+#     delivery_box.click()
+
+# click_element(By.NAME, 'confirmDeliveryOption')
+
+# payment_box = driver.find_element(By.ID, 'payment-option-2')
+# if not payment_box.is_selected():  
+#     payment_box.click()
+
+# click_element(By.XPATH, '//button[contains(text(), "Złóż zamówienie")]')
+
+
+
+
+#=============================
+# Logowanie się
+#===========================
+
+driver.get(site_url)
+
+click_element(By.XPATH, '//*[@title="Zaloguj się"]')
+
+mail_box = driver.find_element(By.NAME, 'email')
+mail_box.send_keys('kotek13@gmail.com') 
+
+
+pass_box = driver.find_element(By.NAME, 'password')
+pass_box.send_keys('test1234') 
+
+
+click_element(By.XPATH, '//button[contains(text(), "Zaloguj się")]')
+
+
+
+
+#=========================
+
+
+# i. Sprawdzenie statusu zamówienia
+
+
+driver.get(site_url)
+
+click_element(By.XPATH, '//a[contains(text(), "Moje konto")]')
+
+click_element(By.ID, "history-link")
+
+link = driver.find_element(By.LINK_TEXT, "Szczegóły")
+link.click()
+
+# Pobranie faktury VAT
+
+driver.get(site_url)
+
+click_element(By.XPATH, '//a[contains(text(), "Moje konto")]')
+
+click_element(By.ID, "order-slips-link")
