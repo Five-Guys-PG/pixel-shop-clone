@@ -27,6 +27,7 @@ XML_TEMPLATES_DIR = Path(__file__).parent / "xml_templates"
 CATEGORY_API_ENDPOINT = f"{PRESTA_URL}/api/categories"
 PRODUCT_API_ENDPOINT = f"{PRESTA_URL}/api/products"
 IMAGE_API_ENDPOINT = f"{PRESTA_URL}/api/images/products"
+STOCK_API_ENDPOINT = f"{PRESTA_URL}/api/stock_availables"
 
 
 def debug_print(message: str) -> None:
@@ -104,7 +105,7 @@ def flatten_list(nested_list: list) -> list:
 class Uploader:
     def __init__(self, api_key: str) -> None:
         self._auth = httpx.BasicAuth(username=api_key, password="")
-        self._client = httpx.Client(auth=self._auth)
+        self._client = httpx.Client(auth=self._auth, verify=False)
         self._data = {}
 
     def _add_io_format_json(self, url: str) -> str:
@@ -113,6 +114,24 @@ class Uploader:
     def load_data_from_file(self, filename: str | os.PathLike) -> None:
         with open(filename, "r") as json_file:
             self._data = json.load(json_file)
+
+    def upload_product_stock(self, product: Product):
+        stock = random.randint(0, 11)
+        try:
+            stock_data = self._client.get(
+                self._add_io_format_json(STOCK_API_ENDPOINT + f"/{product.id}?filter[id_product]={product.id}&display=full"),
+            ).json()
+        except json.JSONDecodeError:
+            return
+
+        if "stock_availables" in stock_data:
+            stock_id = stock_data["stock_availables"][0]["id"]
+            template = PrestaItem.jinja_env.get_template("stock_template.xml")
+            stock_xml = template.render(stock_id=stock_id, stock=stock, product_id=product.id)
+            self._client.put(
+                STOCK_API_ENDPOINT + f"/{stock_id}",
+                content=stock_xml
+            )
 
     def upload_product_images(self, product: Product):
         for image, type in [
@@ -132,7 +151,8 @@ class Uploader:
         )
         product.set_id_from_response(response.json())
 
-        self.upload_product_images(product)
+        # self.upload_product_images(product)
+        self.upload_product_stock(product)
 
     def create_subcategory(self, subcategory_json: dict, parent: Category):
         subcategory = Subcategory(subcategory_json["subcategory"], parent)

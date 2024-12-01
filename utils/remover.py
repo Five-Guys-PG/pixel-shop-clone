@@ -3,7 +3,7 @@ from tqdm import tqdm
 
 from uploader import API_KEY, CATEGORY_API_ENDPOINT, PRODUCT_API_ENDPOINT
 
-client = httpx.Client(auth=httpx.BasicAuth(username=API_KEY, password=""))
+client = httpx.Client(auth=httpx.BasicAuth(username=API_KEY, password=""), verify=False)
 
 
 def remove_all_categories():
