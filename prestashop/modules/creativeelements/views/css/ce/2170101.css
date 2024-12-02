@@ -16,6 +16,10 @@ div {
     background: transparent;
 } 
 
+li{
+    list-style-type: none;
+}
+
 body { 
     margin: 0; 
     padding: 0; 
@@ -61,7 +65,7 @@ footer {
     display: block;
 } 
 
-footer { 
+#pixel-footer { 
     margin-bottom: 10px; 
     padding-bottom: 0.5em;
     
@@ -74,10 +78,14 @@ footer {
     background: #000656;
 } 
 
-footer.footer.row { 
+#pixel-footer.footer.row { 
     margin-bottom: 0; 
     padding: 0; 
     background: #000656;
+}
+
+#footer{
+    background: #000656 !important;
 }
 
 .row:before,.box:before,.product:before,.s-row:before,.row:after,.box:after,.product:after,.s-row:after { 
@@ -143,6 +151,24 @@ li {
     font-size: 100%; 
     background: transparent;
 } 
+
+.btn {
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  font-size: 16px;
+  padding-top: 6px;
+}
+
+.btn:hover{
+    color: #000656 !important;
+    opacity: 0.6 !important;
+}
+
+.cart-content-btn > button:nth-child(1) {
+    width: 420px !important;
+    padding-top: 0px;
+}
+
 
 ul li  { 
     line-height: 20px; 
