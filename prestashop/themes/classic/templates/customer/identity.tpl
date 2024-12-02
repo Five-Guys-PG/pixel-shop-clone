@@ -26,6 +26,7 @@
 
 {block name='page_title'}
   {l s='Your personal information' d='Shop.Theme.Customeraccount'}
+  bylem tu
 {/block}
 
 {block name='page_content'}
