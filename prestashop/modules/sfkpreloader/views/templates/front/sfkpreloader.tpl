@@ -32,6 +32,7 @@
 </style>
 
 <script type="text/javascript">
+console.log("IT WORKS");
 $(window).load(function() {
     setTimeout(() => {
         $(".sfkloader").fadeOut("slow");
