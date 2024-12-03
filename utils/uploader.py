@@ -134,12 +134,12 @@ class Uploader:
             )
 
     def upload_product_images(self, product: Product):
-        for image, type in [
+        for image, image_type in [
             (product.first_image, "image/webp"),
             (product.second_image, "image/jpeg"),
         ]:
-            with open(IMAGE_DIR / image, "rb") as first_image:
-                files = {"image": (image, first_image, "image/jpeg")}
+            with open(IMAGE_DIR / image, "rb") as image_file:
+                files = {"image": (image, image_file, image_type)}
                 self._client.post(IMAGE_API_ENDPOINT + f"/{product.id}", files=files)
 
     def create_product(self, product_json: dict, category: Category):
@@ -151,7 +151,7 @@ class Uploader:
         )
         product.set_id_from_response(response.json())
 
-        # self.upload_product_images(product)
+        self.upload_product_images(product)
         self.upload_product_stock(product)
 
     def create_subcategory(self, subcategory_json: dict, parent: Category):
