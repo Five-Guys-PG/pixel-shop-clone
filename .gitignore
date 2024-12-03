@@ -8,3 +8,5 @@ prestashop/var/
 utils/venv
 utils/__pycache__
 utils/.env
+
+ssl/*.pem

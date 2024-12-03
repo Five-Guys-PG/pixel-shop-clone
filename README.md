@@ -47,3 +47,14 @@ Backups are stored in ```backups``` dir.
 ```
 ./scripts/create_backup.sh <path to output file>
 ```
+
+### HTTPS intructions
+To be able to use https on this website you need to complete following steps:
+
+1. Generate SSL certificate
+```
+openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+```
+
+2. Add created files (key.pem and cert.pem) to ssl/ directory
+3. Enable SSL in admin panel if it's not
