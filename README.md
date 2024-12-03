@@ -1,14 +1,20 @@
 # Pixel Shop Clone
-Original [pixel-shop.pl](https://pixel-shop.pl)
 
-## How to run it localy 
+A clone of the original [Pixel Shop](https://pixel-shop.pl) built using PrestaShop v1.7.8.11.
 
-### Docker Engine
-You need to have docker engine installed on your machine. Installation instructions [here](https://docs.docker.com/engine/install/) 
+---
 
-### Clone this repo
-```
+## 🚀 How to Run Locally
+
+### Prerequisites
+- **Docker Engine**: Ensure Docker Engine is installed on your machine. Follow the [installation instructions](https://docs.docker.com/engine/install/).
+
+---
+
+### 1. Clone the Repository
+```bash
 git clone https://github.com/Five-Guys-PG/pixel-shop-clone.git
+cd pixel-shop-clone
 ```
 
 ### Create your .env file
@@ -16,7 +22,6 @@ In the repo there is .env.sample file. You can use it as a template for your own
 ```
 cp .env.sample .env
 ```
-| If you have Windows: God bless you
 
 Remember to change secrets in newly created .env file
 
@@ -58,3 +63,10 @@ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -node
 
 2. Add created files (key.pem and cert.pem) to ssl/ directory
 3. Enable SSL in admin panel if it's not
+
+
+## 👥 Authors
+- [Danylo Zakharchenko](https://github.com/zakh-d)
+- [Vitalii Shapovalov](https://github.com/vetall7)
+- [Ruslan Rbaadanov](https://github.com/R-Ohman)
+- [Artem Dychenko](https://github.com/artemDychenko)
