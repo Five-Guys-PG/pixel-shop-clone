@@ -88,13 +88,13 @@ footer {
     background: #000656 !important;
 }
 
-.row:before,.box:before,.product:before,.s-row:before,.row:after,.box:after,.product:after,.s-row:after { 
+.row:before,.footer-box:before,.product:before,.s-row:before,.row:after,.footer-box:after,.product:after,.s-row:after { 
     display: table; 
     line-height: 0; 
     content: '';
 } 
 
-.row:after,.box:after,.product:after,.s-row:after { 
+.row:after,.footer-box:after,.product:after,.s-row:after { 
     clear: both;
 } 
 
@@ -133,7 +133,7 @@ ul {
     margin: 0;
 } 
 
-.box { 
+.footer-box { 
     position: relative; 
     margin: 0 0 20px 0;
 } 
@@ -276,12 +276,12 @@ img {
 
 .innerfooter ul.overall ul li  { 
     clear: both;
+    background: none !important;
 } 
 
 footer.footer.row .innerfooter .overall .head  { 
     cursor: default; 
     color: #00f0f0; 
-    background: #000656;
 } 
 
 footer .innerfooter ul.overall ul li::after { 

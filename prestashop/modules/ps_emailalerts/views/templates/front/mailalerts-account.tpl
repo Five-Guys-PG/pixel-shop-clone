@@ -23,6 +23,7 @@
 {/block}
 
 {block name='page_content'}
+  bylem tutaj
   {if $mailAlerts}
     <ul>
       {foreach from=$mailAlerts item=mailAlert}
