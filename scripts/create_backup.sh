@@ -22,3 +22,7 @@ fi
 source .env
 
 docker compose exec mysql mysqldump -u root -p$DB_PASSWD $DB_NAME > $1
+
+# Replace the env variables' values with their keys
+sed -i -e "s/$MAIL_USER/\$MAIL_USER/g" $1
+sed -i -e "s/$MAIL_PASS/\$MAIL_PASS/g" $1

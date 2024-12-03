@@ -29,6 +29,7 @@
 {/block}
 
 {block name='page_content'}
+  bylem tu
   {foreach $customer.addresses as $address}
     <div class="col-lg-4 col-md-6 col-sm-6">
     {block name='customer_address'}
