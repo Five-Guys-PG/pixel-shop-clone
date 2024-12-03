@@ -4,3 +4,5 @@ prestashop/var/
 
 /.env
 .venv
+
+automatic-testing/venv
