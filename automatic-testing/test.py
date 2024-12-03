@@ -16,7 +16,7 @@ firefox_options = Options()
 # firefox_options.add_argument("--headless")
 firefox_service = Service("/snap/bin/geckodriver")
 
-site_url = "http://localhost:8080"
+site_url = "https://localhost:8083"
 ##########################
 
 driver = webdriver.Firefox(service=firefox_service, options=firefox_options)
@@ -32,16 +32,16 @@ def click_element(by, value, driver, timeout=10):
         print(f"Element {value} not found.")
 
 
-def log(driver):
+def log():
     driver.get(site_url)
 
     click_element(By.XPATH, '//*[@title="Zaloguj się"]', driver)
 
     mail_box = driver.find_element(By.NAME, "email")
-    mail_box.send_keys("kotek13@gmail.com")
+    mail_box.send_keys("jankowalski7@gmail.com")
 
     pass_box = driver.find_element(By.NAME, "password")
-    pass_box.send_keys("test1234")
+    pass_box.send_keys("testpass123")
 
     click_element(By.XPATH, '//button[contains(text(), "Zaloguj się")]', driver)
 # #=========================
@@ -59,7 +59,11 @@ def test_adding_10_products_to_cart():
 
     driver.implicitly_wait(1)
 
-    click_element(By.XPATH, '//a[contains(@id, "headercategory343")]', driver)
+    elements = driver.find_elements(By.XPATH, "//*[starts-with(@id, 'headercategory')]")
+
+    elements[0].click()
+
+    #click_element(By.XPATH, '//a[contains(@id, "headercategory95")]', driver)
 
     products = driver.find_elements(By.CLASS_NAME, "js-product")
 
@@ -99,7 +103,11 @@ def test_adding_10_products_to_cart():
 
     driver.implicitly_wait(1)
 
-    click_element(By.XPATH, '//a[contains(@id, "headercategory341")]', driver)
+    elements = driver.find_elements(By.XPATH, "//*[starts-with(@id, 'headercategory')]")
+
+    elements[2].click()
+
+    #click_element(By.XPATH, '//a[contains(@id, "headercategory71")]', driver)
 
     products = driver.find_elements(By.CLASS_NAME, "js-product")
 
@@ -225,103 +233,98 @@ def test_remove_3_products_from_cart():
     assert number_of_cart_items_after+3 == number_of_cart_items_before
 
 
-# # d. Rejestrację nowego konta
-# def test_registry(driver):
-#     driver.get(site_url)
+# d. Rejestrację nowego konta
+def test_registry():
+    driver.get(site_url)
 
-#     click_element(By.XPATH, '//*[@title="Zarejestruj się"]', driver)
+    click_element(By.XPATH, '//*[@title="Zarejestruj się"]', driver)
 
-#     firstname_box = driver.find_element(By.NAME, "firstname")
-#     firstname_box.send_keys("Jak")
+    firstname_box = driver.find_element(By.NAME, "firstname")
+    firstname_box.send_keys("Jan")
 
-#     lastname_box = driver.find_element(By.NAME, "lastname")
-#     lastname_box.send_keys("Kowalski")
+    lastname_box = driver.find_element(By.NAME, "lastname")
+    lastname_box.send_keys("Kowalski")
 
-#     mail_box = driver.find_element(By.NAME, "email")
-#     mail_box.send_keys("jankowalski7@gmail.com") # trzeba zmienić email, bo będzie błąd, że już istnieje
+    mail_box = driver.find_element(By.NAME, "email")
+    mail_box.send_keys("jankowalski10@gmail.com") # trzeba zmienić email, bo będzie błąd, że już istnieje
 
-#     pass_box = driver.find_element(By.NAME, "password")
-#     pass_box.send_keys("testpass123")
+    pass_box = driver.find_element(By.NAME, "password")
+    pass_box.send_keys("testpass123")
 
-#     check_box = driver.find_element(By.NAME, "customer_privacy")
-#     if not check_box.is_selected():
-#         check_box.click()
+    check_box = driver.find_element(By.NAME, "customer_privacy")
+    if not check_box.is_selected():
+        check_box.click()
 
-#     check_box = driver.find_element(By.NAME, "psgdpr")
-#     if not check_box.is_selected():
-#         check_box.click()
+    check_box = driver.find_element(By.NAME, "psgdpr")
+    if not check_box.is_selected():
+        check_box.click()
 
-#     click_element(By.XPATH, '//button[contains(text(), "Zapisz")]', driver)
+    click_element(By.XPATH, '//button[contains(text(), "Zapisz")]', driver)
 
-#     try:
-#         account = driver.find_element(By.XPATH, '//*[@title="Zarejestruj się"]')
-#         assert 1 == 0, "Zarejestruj sie przycisk jest widoczny"
-#     except NoSuchElementException:
-#         pass
+    try:
+        account = driver.find_element(By.XPATH, '//*[@title="Zarejestruj się"]')
+        assert 1 == 0, "Zarejestruj sie przycisk jest widoczny"
+    except NoSuchElementException:
+        pass
     
 
 
-# # e. Wykonanie zamówienia zawartości koszyka
-# # f. Wybór metody płatności: przy odbiorze,
-# # g. Wybór jednego z dwóch przewoźników
-# # h. Zatwierdzenie zamówienia
-# def test_making_order(driver):
-#     click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
+# e. Wykonanie zamówienia zawartości koszyka
+# f. Wybór metody płatności: przy odbiorze,
+# g. Wybór jednego z dwóch przewoźników
+# h. Zatwierdzenie zamówienia
+def test_making_order():
+    click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
 
-#     click_element(By.XPATH, '//a[contains(@class, "btn btn-primary")]', driver)
+    click_element(By.XPATH, '//a[contains(@class, "btn btn-primary")]', driver)
 
-#     address_box = driver.find_element(By.NAME, "address1")
-#     address_box.send_keys("Do studzienki 61")
+    address_box = driver.find_element(By.NAME, "address1")
+    address_box.send_keys("Do studzienki 61")
 
-#     postcode_box = driver.find_element(By.NAME, "postcode")
-#     postcode_box.send_keys("80-830")
+    postcode_box = driver.find_element(By.NAME, "postcode")
+    postcode_box.send_keys("80-830")
 
-#     city_box = driver.find_element(By.NAME, "city")
-#     city_box.send_keys("Gdańsk")
+    city_box = driver.find_element(By.NAME, "city")
+    city_box.send_keys("Gdańsk")
 
-#     click_element(By.NAME, "confirm-addresses", driver)
+    click_element(By.NAME, "confirm-addresses", driver)
 
-#     time.sleep(1)
+    time.sleep(1)
 
-#     delivery_box = driver.find_element(By.ID, "delivery_option_19")
-#     if not delivery_box.is_selected():
-#         delivery_box.click()
+    delivery_box = driver.find_element(By.ID, "delivery_option_19")
+    if not delivery_box.is_selected():
+        delivery_box.click()
 
-#     click_element(By.NAME, "confirmDeliveryOption", driver)
+    click_element(By.NAME, "confirmDeliveryOption", driver)
 
-#     payment_box = driver.find_element(By.ID, "payment-option-2")
-#     if not payment_box.is_selected():
-#         payment_box.click()
+    payment_box = driver.find_element(By.ID, "payment-option-2")
+    if not payment_box.is_selected():
+        payment_box.click()
 
-#     click_element(By.XPATH, '//button[contains(text(), "Złóż zamówienie")]', driver)
-
-
-# # i. Sprawdzenie statusu zamówienia
-# def test_check_status_of_ordering(driver):
-#     driver.get(site_url)
-
-#     click_element(By.XPATH, '//a[contains(text(), "Moje konto")]', driver)
-
-#     click_element(By.ID, "history-link", driver)
-
-#     link = driver.find_element(By.LINK_TEXT, "Szczegóły")
-#     link.click()
-
-#     # j. Pobranie faktury VAT
+    click_element(By.XPATH, '//button[contains(text(), "Złóż zamówienie")]', driver)
 
 
-# def test_loading_of_VAT_recipy(driver):
-#     driver.get(site_url)
+# i. Sprawdzenie statusu zamówienia
+def test_check_status_of_ordering():
+    driver.get(site_url)
 
-#     click_element(By.XPATH, '//a[contains(text(), "Moje konto")]', driver)
+    click_element(By.XPATH, '//a[contains(text(), "Moje konto")]', driver)
 
-#     click_element(By.ID, "history-link", driver)
+    click_element(By.ID, "history-link", driver)
+
+    link = driver.find_element(By.LINK_TEXT, "Szczegóły")
+    link.click()
+
+    # j. Pobranie faktury VAT
 
 
-#test_adding_10_products_to_cart()
-# test_add_one_specified_product_to_cart()
-# test_remove_3_products_from_cart()
-# test_registry()
-# test_making_order()
-# test_check_status_of_ordering()
-# test_loading_of_VAT_recipy()
+def test_loading_of_VAT_recipy():
+    driver.get(site_url)
+
+
+    click_element(By.XPATH, '//a[contains(text(), "Moje konto")]', driver)
+
+    click_element(By.ID, "history-link", driver)
+
+    link = driver.find_element(By.XPATH, "//td[@class='text-sm-center hidden-md-down']/a")
+    link.click()
