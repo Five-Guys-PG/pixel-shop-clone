@@ -10,3 +10,8 @@ utils/__pycache__
 utils/.env
 
 ssl/*.pem
+
+automatic-testing/venv
+automatic-testing/__pycache__
+automatic-testing/.pytest_cache
+automatic-testing/.ruff_cache
