@@ -30,6 +30,7 @@
 
 {block name='page_content'}
   {block name='order_infos'}
+    bylem tu
     <div id="order-infos">
       <div class="box">
           <div class="row">

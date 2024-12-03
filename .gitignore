@@ -4,3 +4,7 @@ prestashop/var/
 
 /.env
 .venv
+
+utils/venv
+utils/__pycache__
+utils/.env
