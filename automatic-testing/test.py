@@ -61,15 +61,19 @@ def test_adding_10_products_to_cart():
 
     elements = driver.find_elements(By.XPATH, "//*[starts-with(@id, 'headercategory')]")
 
-    elements[0].click()
+    elements[3].click()
 
     #click_element(By.XPATH, '//a[contains(@id, "headercategory95")]', driver)
 
-    products = driver.find_elements(By.CLASS_NAME, "js-product")
+    
+
+    products = driver.find_elements(By.XPATH, '//*[@class="thumbnail product-thumbnail"]')
 
     for i in range(6):
-        products = driver.find_elements(By.CLASS_NAME, "js-product")
+        
+        products = driver.find_elements(By.XPATH, '//*[@class="thumbnail product-thumbnail"]')
 
+        time.sleep(1)
         products[i].click()
         button_to_cart = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable(
@@ -79,6 +83,7 @@ def test_adding_10_products_to_cart():
                 )
             )
         )
+        time.sleep(1)
         button_to_cart.click()
 
         button_to_continue = WebDriverWait(driver, 10).until(
@@ -89,6 +94,7 @@ def test_adding_10_products_to_cart():
                 )
             )
         )
+        time.sleep(1)
         button_to_continue.click()
         time.sleep(1)
         driver.back()
@@ -104,16 +110,16 @@ def test_adding_10_products_to_cart():
     driver.implicitly_wait(1)
 
     elements = driver.find_elements(By.XPATH, "//*[starts-with(@id, 'headercategory')]")
-
-    elements[2].click()
+    time.sleep(1)
+    elements[7].click()
 
     #click_element(By.XPATH, '//a[contains(@id, "headercategory71")]', driver)
 
-    products = driver.find_elements(By.CLASS_NAME, "js-product")
+    products = driver.find_elements(By.XPATH, '//*[@class="thumbnail product-thumbnail"]')
 
     for i in range(4):
-        products = driver.find_elements(By.CLASS_NAME, "js-product")
-
+        products = driver.find_elements(By.XPATH, '//*[@class="thumbnail product-thumbnail"]')
+        time.sleep(1)
         products[i].click()
         button_to_cart = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable(
@@ -123,6 +129,7 @@ def test_adding_10_products_to_cart():
                 )
             )
         )
+        time.sleep(1)
         button_to_cart.click()
 
         button_to_continue = WebDriverWait(driver, 10).until(
@@ -133,12 +140,13 @@ def test_adding_10_products_to_cart():
                 )
             )
         )
+        time.sleep(1)
         button_to_continue.click()
         time.sleep(1)
         driver.back()
 
     driver.get(site_url)
-
+    time.sleep(1)
     click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
 
     counter = 10
@@ -153,25 +161,27 @@ def test_adding_10_products_to_cart():
         if buttons:
             for _ in range(random_quantity - 1):
                 buttons = driver.find_elements(By.CSS_SELECTOR, 'button.btn.btn-touchspin.js-touchspin.js-increase-product-quantity.bootstrap-touchspin-up')  
+                
                 buttons[i].click()
                 counter+=1
 
     
     driver.get(site_url)
+    time.sleep(1)
     count_of_products_in_cart = driver.find_element(By.XPATH, '//span[contains(@class, "countlabel")]').text.split()[-1] 
 
 
     assert count_of_products_in_cart == f'({counter})'
 
-# # b. Wyszukanie produktu po nazwie i dodanie do koszyka losowego produktu spośród znalezionych
+# b. Wyszukanie produktu po nazwie i dodanie do koszyka losowego produktu spośród znalezionych
 def test_add_one_specified_product_to_cart():
     driver.get(site_url)
-
+    time.sleep(1)
     count_of_products_in_cart_before = int(driver.find_element(By.XPATH, '//span[contains(@class, "countlabel")]').text.split()[-1][1:-1])
 
     search_box = driver.find_element(By.CLASS_NAME, "search__input")
     search_box.clear()
-    search_box.send_keys("stojak")
+    search_box.send_keys("kielich")
 
     search_box.send_keys(Keys.RETURN)
 
@@ -182,8 +192,9 @@ def test_add_one_specified_product_to_cart():
     )
 
     random_product = random.choice(products)
+    time.sleep(1)
     random_product.click()
-
+    time.sleep(1)
     button_to_cart = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(
             (By.XPATH, '//a[contains(@class, "elementor-button elementor-size-lg")]')
@@ -199,6 +210,7 @@ def test_add_one_specified_product_to_cart():
             )
         )
     )
+    time.sleep(1)
     button_to_continue.click()
     time.sleep(1)
 
@@ -210,7 +222,7 @@ def test_add_one_specified_product_to_cart():
 # c. Usunięcie z koszyka 3 produktów
 def test_remove_3_products_from_cart():
     driver.get(site_url)
-
+    time.sleep(1)
     click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
 
     number_of_cart_items_before = len(driver.find_elements(By.XPATH, '//li[contains(@class, "cart-item")]'))
@@ -236,9 +248,9 @@ def test_remove_3_products_from_cart():
 # d. Rejestrację nowego konta
 def test_registry():
     driver.get(site_url)
-
+    time.sleep(1)
     click_element(By.XPATH, '//*[@title="Zarejestruj się"]', driver)
-
+    time.sleep(1)
     firstname_box = driver.find_element(By.NAME, "firstname")
     firstname_box.send_keys("Jan")
 
@@ -274,10 +286,11 @@ def test_registry():
 # g. Wybór jednego z dwóch przewoźników
 # h. Zatwierdzenie zamówienia
 def test_making_order():
+    time.sleep(1)
     click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
-
+    time.sleep(1)
     click_element(By.XPATH, '//a[contains(@class, "btn btn-primary")]', driver)
-
+    time.sleep(1)
     address_box = driver.find_element(By.NAME, "address1")
     address_box.send_keys("Do studzienki 61")
 
@@ -286,7 +299,7 @@ def test_making_order():
 
     city_box = driver.find_element(By.NAME, "city")
     city_box.send_keys("Gdańsk")
-
+    time.sleep(1)
     click_element(By.NAME, "confirm-addresses", driver)
 
     time.sleep(1)
@@ -294,37 +307,37 @@ def test_making_order():
     delivery_box = driver.find_element(By.ID, "delivery_option_19")
     if not delivery_box.is_selected():
         delivery_box.click()
-
+    time.sleep(1)
     click_element(By.NAME, "confirmDeliveryOption", driver)
-
+    time.sleep(1)
     payment_box = driver.find_element(By.ID, "payment-option-2")
     if not payment_box.is_selected():
         payment_box.click()
-
+    time.sleep(1)
     click_element(By.XPATH, '//button[contains(text(), "Złóż zamówienie")]', driver)
 
 
 # i. Sprawdzenie statusu zamówienia
 def test_check_status_of_ordering():
     driver.get(site_url)
-
+    time.sleep(1)
     click_element(By.XPATH, '//a[contains(text(), "Moje konto")]', driver)
-
+    time.sleep(1)
     click_element(By.ID, "history-link", driver)
-
+    time.sleep(1)
     link = driver.find_element(By.LINK_TEXT, "Szczegóły")
     link.click()
-
+    time.sleep(2)
     # j. Pobranie faktury VAT
 
 
 def test_loading_of_VAT_recipy():
     driver.get(site_url)
-
+    time.sleep(1)
 
     click_element(By.XPATH, '//a[contains(text(), "Moje konto")]', driver)
-
+    time.sleep(1)
     click_element(By.ID, "history-link", driver)
-
+    time.sleep(1)
     link = driver.find_element(By.XPATH, "//td[@class='text-sm-center hidden-md-down']/a")
     link.click()
