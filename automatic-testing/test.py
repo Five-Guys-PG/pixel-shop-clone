@@ -63,8 +63,6 @@ def test_adding_10_products_to_cart():
 
     elements[3].click()
 
-    #click_element(By.XPATH, '//a[contains(@id, "headercategory95")]', driver)
-
     
 
     products = driver.find_elements(By.XPATH, '//*[@class="thumbnail product-thumbnail"]')
