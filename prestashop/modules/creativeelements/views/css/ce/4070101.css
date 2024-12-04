@@ -1,0 +1,363 @@
+/* Start custom CSS for html, class: .elementor-element-fdc9185 */.s-row { 
+    margin-left: -20px;
+} 
+
+.row:before,.box:before,.product:before,.s-row:before,.row:after,.box:after,.product:after,.s-row:after { 
+    display: table; 
+    line-height: 0; 
+    content: '';
+} 
+
+.row:after,.box:after,.product:after,.s-row:after { 
+    clear: both;
+} 
+
+[class*="s-grid"] { 
+    float: left; 
+    min-height: 1px; 
+    margin-left: 20px;
+} 
+
+.s-row [class*="s-grid"]  { 
+    margin-left: 20px;
+} 
+
+.s-row .s-grid-12  { 
+    width: 1180px;
+} 
+
+.box { 
+    position: relative; 
+    margin: 0 0 20px 0;
+} 
+
+.box .boxhead  { 
+    border-bottom: 1px solid #d8d8d8; 
+    margin-bottom: 0.7em; 
+    line-height: 40px;
+} 
+
+.box_infopage .boxhead  { 
+    border: 0;
+} 
+
+span { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+.box .boxhead > span  { 
+    font-size: 1.4em; 
+    line-height: 35px; 
+    display: block; 
+    margin-top: 10px;
+} 
+
+.box_infopage .boxhead span  { 
+    margin-top: 0; 
+    font-family: "uni"; 
+    text-transform: uppercase; 
+    font-size: 30px !important; 
+    line-height: 40px;
+} 
+
+img { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+img { 
+    max-width: 100%; 
+    vertical-align: middle; 
+    border: 0; 
+    -ms-interpolation-mode: bicubic;
+} 
+
+.px1 { 
+    width: 0; 
+    height: 0; 
+    display: inline-block; 
+    border-width: 0; 
+    vertical-align: middle;
+} 
+
+.px1 { 
+    display: none; 
+    vertical-align: middle;
+} 
+
+p { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+.box_infopage p  { 
+    margin-bottom: 1em;
+} 
+
+.resetcss p  { 
+    margin: 1em 0;
+} 
+
+.resetcss p  { 
+    line-height: 22px;
+} 
+
+.dwie-kolumny { 
+    display: flex; 
+    flex-wrap: wrap;
+} 
+
+hr { 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box; 
+    height: 0;
+} 
+
+.dwie-kolumny > *  { 
+    box-sizing: border-box; 
+    flex-basis: 50%; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+} 
+
+.dwie-kolumny > :first-child  { 
+    padding-right: 15px;
+} 
+
+.dwie-kolumny > :last-child  { 
+    padding-left: 15px;
+} 
+
+h2 { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+h2 { 
+    margin: 10px 0 0; 
+    font-family: inherit; 
+    font-weight: normal; 
+    line-height: 21px; 
+    color: #000656;
+} 
+
+h2 { 
+    line-height: 35px;
+} 
+
+h2 { 
+    font-size: 1.4em;
+} 
+
+h2 { 
+    font-family: "Roboto Mono",monospace;
+} 
+
+.resetcss h2  { 
+    line-height: initial; 
+    font-weight: bold;
+} 
+
+.resetcss h2  { 
+    font-size: 1.5em; 
+    margin: .83em 0;
+} 
+
+.box_infopage .innerbox h2  { 
+    margin-bottom: 0.7em;
+} 
+
+ul { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+ul { 
+    margin-left: 0; 
+    list-style: none;
+} 
+
+.resetcss ul  { 
+    padding-left: 40px; 
+    list-style-type: disc;
+} 
+
+.resetcss ul  { 
+    margin: 1em 0;
+} 
+
+.cztery-kolumny { 
+    display: flex; 
+    flex-wrap: wrap;
+} 
+
+h3 { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+h3 { 
+    margin: 10px 0 0; 
+    font-family: inherit; 
+    font-weight: normal; 
+    line-height: 21px; 
+    color: #000656;
+} 
+
+h3 { 
+    line-height: 35px;
+} 
+
+h3 { 
+    font-size: 1.4em;
+} 
+
+h3 { 
+    font-family: "Roboto Mono",monospace;
+} 
+
+.resetcss h3  { 
+    line-height: initial; 
+    font-weight: bold;
+} 
+
+.resetcss h3  { 
+    font-size: 1.17em; 
+    margin: 1em 0;
+} 
+
+.box_infopage .innerbox h3  { 
+    margin-bottom: 0.7em;
+} 
+
+h4 { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+h4 { 
+    margin: 10px 0 0; 
+    font-family: inherit; 
+    font-weight: normal; 
+    line-height: 21px; 
+    color: #000656;
+} 
+
+h4 { 
+    font-size: 1.4em; 
+    margin-bottom: 0.8em;
+} 
+
+h4 { 
+    font-family: "Roboto Mono",monospace;
+} 
+
+.resetcss h4  { 
+    line-height: initial; 
+    font-weight: bold;
+} 
+
+.resetcss h4  { 
+    font-size: 1em; 
+    margin: 1.33em 0;
+} 
+
+.dwie-kolumny img  { 
+    width: 100%; 
+    height: auto;
+} 
+
+strong { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+strong { 
+    font-weight: 700;
+} 
+
+li { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+ul li  { 
+    line-height: 20px; 
+    margin-bottom: 0;
+} 
+
+.cztery-kolumny > *  { 
+    box-sizing: border-box; 
+    flex-basis: 25%; 
+    padding: 0 15px;
+} 
+
+a { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+    outline: 0 none; 
+    font-size: 100%; 
+    background: transparent;
+} 
+
+a { 
+    color: #00f0f0; 
+    text-decoration: none;
+} 
+
+a:hover,a:active { 
+    outline: 0;
+} 
+
+a:hover { 
+    color: #00f0f0;
+} 
+
+.cztery-kolumny img  { 
+    width: 100%; 
+    height: auto;
+} 
+
+
+.page-content.page-cms {
+    width: 1250px
+}/* End custom CSS */

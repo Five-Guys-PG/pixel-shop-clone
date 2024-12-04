@@ -1,0 +1,41 @@
+@keyframes ce-progress-bar-stripes {
+	from {
+		background-position: 1rem 0;
+	}
+	to {
+		background-position: 0 0;
+	}
+}
+#ce-progress.progress {
+	display: flex;
+	height: 1rem;
+	overflow: hidden;
+	font-size: .75rem;
+	background-color: #e9ecef;
+	border-radius: .25rem;
+}
+#ce-progress .progress-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #fff;
+	text-align: center;
+	background-color: #007bff;
+	transition: width .6s ease;
+}
+#ce-progress .progress-bar-animated {
+	animation: ce-progress-bar-stripes 1s linear infinite;
+}
+#ce-progress .progress-bar-striped {
+	background-image: linear-gradient(
+		45deg,
+		rgba(255,255,255,.15) 25%,
+		transparent 25%,
+		transparent 50%,
+		rgba(255,255,255,.15) 50%,
+		rgba(255,255,255,.15) 75%,
+		transparent 75%,
+		transparent
+	);
+	background-size: 1rem 1rem;
+}
