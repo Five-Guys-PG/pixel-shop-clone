@@ -50,7 +50,7 @@ def log():
 # a. Dodanie do koszyka 10 produktów z dwóch różnych kategorii
 def test_adding_10_products_to_cart():
     driver.get(site_url)
-
+    time.sleep(1)
     kategorie_button = driver.find_element(By.ID, "headlink5")
 
     actions = ActionChains(driver)
@@ -58,7 +58,7 @@ def test_adding_10_products_to_cart():
     actions.move_to_element(kategorie_button).perform()
 
     driver.implicitly_wait(1)
-
+    time.sleep(1)
     elements = driver.find_elements(By.XPATH, "//*[starts-with(@id, 'headercategory')]")
 
     elements[3].click()
