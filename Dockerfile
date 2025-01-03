@@ -1,6 +1,6 @@
 FROM prestashop/prestashop:1.7.8
 
-COPY ./prestashop /var/www/prestashop
+COPY --chown=www-data:www-data --chmod=755 ./prestashop /var/www/prestashop
 
 COPY ./ssl/key.pem /var/www/prestashop/.ssl/key.pem
 COPY ./ssl/cert.pem /var/www/prestashop/.ssl/cert.pem
