@@ -1,6 +1,8 @@
-FROM prestashop/prestashop:1.7.8
+FROM prestashop/base:7.4-apache
 
-COPY --chown=www-data:www-data --chmod=755 ./prestashop /var/www/prestashop
+ENV PS_VERSION 1.7.8.11
+
+COPY --chown=www-data:www-data prestashop /var/www/html/
 
 COPY ./ssl/key.pem /var/www/prestashop/.ssl/key.pem
 COPY ./ssl/cert.pem /var/www/prestashop/.ssl/cert.pem
