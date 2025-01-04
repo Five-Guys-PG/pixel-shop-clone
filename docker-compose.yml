@@ -9,7 +9,7 @@ services:
     networks:
       - prestashop_network
   prestashop:
-    image: Five-Guys/pixelshop-clone
+    build: .
     platform: linux/x86_64
     restart: unless-stopped
     depends_on:
