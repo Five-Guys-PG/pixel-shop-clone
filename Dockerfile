@@ -1,4 +1,4 @@
-FROM prestashop/base:7.1-apache
+FROM prestashop/base:7.4-apache
 
 ENV PS_VERSION 1.7.8.11
 
