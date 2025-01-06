@@ -1,6 +1,7 @@
 .DS_Store
 
 prestashop/var/
+prestashop/app/config/parameters.php
 
 /.env
 .venv
