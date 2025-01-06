@@ -1,0 +1,13 @@
+services:
+  prestashop:
+    image: vitalii318/pixel-shop-clone
+    restart: always
+    ports:
+      - 8080:80
+      - 8083:443
+    environment:
+      DB_SERVER: localhost
+      DB_NAME: prestashop
+      DB_USER: root
+    env_file:
+      - .env

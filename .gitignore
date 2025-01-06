@@ -4,6 +4,7 @@ prestashop/var/
 prestashop/app/config/parameters.php
 
 /.env
+deployment/.env
 .venv
 
 utils/venv
