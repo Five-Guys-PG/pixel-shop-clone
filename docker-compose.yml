@@ -23,6 +23,8 @@ services:
       PS_INSTALL_AUTO: 0
     networks:
       - prestashop_network
+    volumes:
+      - ./prestashop:/var/www/html
 networks:
     prestashop_network:
 volumes:

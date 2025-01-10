@@ -19,4 +19,6 @@ RUN apt update && apt install gettext-base
 COPY docker/templates/parameters.php .
 COPY --chmod=755 ./docker/docker-entrypoint.sh /app/docker-entrypoint.sh
 
+COPY backups/backup . 
+
 ENTRYPOINT ["./docker-entrypoint.sh"]
