@@ -16,7 +16,7 @@ firefox_options = Options()
 # firefox_options.add_argument("--headless")
 firefox_service = Service("/snap/bin/geckodriver")
 
-site_url = "https://localhost:5243"
+site_url = "https://localhost:8083"
 ##########################
 
 driver = webdriver.Firefox(service=firefox_service, options=firefox_options)
@@ -153,11 +153,12 @@ def test_adding_10_products_to_cart():
 
         random_quantity = random.randint(1, 5)
 
-        
+        time.sleep(1)
         buttons = driver.find_elements(By.CSS_SELECTOR, 'button.btn.btn-touchspin.js-touchspin.js-increase-product-quantity.bootstrap-touchspin-up')
         
         if buttons:
             for _ in range(random_quantity - 1):
+                time.sleep(1)
                 buttons = driver.find_elements(By.CSS_SELECTOR, 'button.btn.btn-touchspin.js-touchspin.js-increase-product-quantity.bootstrap-touchspin-up')  
                 
                 buttons[i].click()
@@ -257,7 +258,9 @@ def test_registry():
 
     mail_box = driver.find_element(By.NAME, "email")
 
-    mail_box.send_keys("jakowalski@gmail.com") # trzeba zmienić email, bo będzie błąd, że już istnieje
+    milli_sec = int(round(time.time() * 1000))
+
+    mail_box.send_keys("jakowalski" + str(milli_sec) + "@gmail.com") # trzeba zmienić email, bo będzie błąd, że już istnieje
 
     pass_box = driver.find_element(By.NAME, "password")
     pass_box.send_keys("testpass123")
