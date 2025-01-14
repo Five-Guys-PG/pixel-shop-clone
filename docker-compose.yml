@@ -21,10 +21,10 @@ services:
     environment:
       DB_SERVER: mysql
       PS_INSTALL_AUTO: 0
-    volumes:
-      - ./prestashop:/var/www/html
     networks:
       - prestashop_network
+    volumes:
+      - ./prestashop:/var/www/html
 networks:
     prestashop_network:
 volumes:

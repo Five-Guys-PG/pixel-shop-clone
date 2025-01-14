@@ -138,13 +138,13 @@ def test_adding_10_products_to_cart():
                 )
             )
         )
-        time.sleep(1)
+        time.sleep(2)
         button_to_continue.click()
-        time.sleep(1)
+        time.sleep(2)
         driver.back()
 
     driver.get(site_url)
-    time.sleep(1)
+    time.sleep(2)
     click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
 
     counter = 10
@@ -153,11 +153,12 @@ def test_adding_10_products_to_cart():
 
         random_quantity = random.randint(1, 5)
 
-        
+        time.sleep(1)
         buttons = driver.find_elements(By.CSS_SELECTOR, 'button.btn.btn-touchspin.js-touchspin.js-increase-product-quantity.bootstrap-touchspin-up')
         
         if buttons:
             for _ in range(random_quantity - 1):
+                time.sleep(1)
                 buttons = driver.find_elements(By.CSS_SELECTOR, 'button.btn.btn-touchspin.js-touchspin.js-increase-product-quantity.bootstrap-touchspin-up')  
                 
                 buttons[i].click()
@@ -165,7 +166,7 @@ def test_adding_10_products_to_cart():
 
     
     driver.get(site_url)
-    time.sleep(1)
+    time.sleep(2)
     count_of_products_in_cart = driver.find_element(By.XPATH, '//span[contains(@class, "countlabel")]').text.split()[-1] 
 
 
@@ -174,7 +175,7 @@ def test_adding_10_products_to_cart():
 # b. Wyszukanie produktu po nazwie i dodanie do koszyka losowego produktu spośród znalezionych
 def test_add_one_specified_product_to_cart():
     driver.get(site_url)
-    time.sleep(1)
+    time.sleep(2)
     count_of_products_in_cart_before = int(driver.find_element(By.XPATH, '//span[contains(@class, "countlabel")]').text.split()[-1][1:-1])
 
     search_box = driver.find_element(By.CLASS_NAME, "search__input")
@@ -183,16 +184,16 @@ def test_add_one_specified_product_to_cart():
 
     search_box.send_keys(Keys.RETURN)
 
-    driver.implicitly_wait(1)
+    driver.implicitly_wait(2)
 
     products = driver.find_elements(
         By.XPATH, '//*[@class="thumbnail product-thumbnail"]'
     )
 
     random_product = random.choice(products)
-    time.sleep(1)
+    time.sleep(2)
     random_product.click()
-    time.sleep(1)
+    time.sleep(2)
     button_to_cart = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable(
             (By.XPATH, '//a[contains(@class, "elementor-button elementor-size-lg")]')
@@ -208,9 +209,9 @@ def test_add_one_specified_product_to_cart():
             )
         )
     )
-    time.sleep(1)
+    time.sleep(2)
     button_to_continue.click()
-    time.sleep(1)
+    time.sleep(2)
 
     count_of_products_in_cart_after = int(driver.find_element(By.XPATH, '//span[contains(@class, "countlabel")]').text.split()[-1][1:-1])
 
@@ -220,7 +221,7 @@ def test_add_one_specified_product_to_cart():
 # c. Usunięcie z koszyka 3 produktów
 def test_remove_3_products_from_cart():
     driver.get(site_url)
-    time.sleep(1)
+    time.sleep(2)
     click_element(By.XPATH, '//*[@title="Koszyk"]', driver)
 
     number_of_cart_items_before = len(driver.find_elements(By.XPATH, '//li[contains(@class, "cart-item")]'))
@@ -234,7 +235,7 @@ def test_remove_3_products_from_cart():
 
         remove_button = cart_items[i].find_element(By.CLASS_NAME, "remove-from-cart")
         remove_button.click()
-        time.sleep(1)
+        time.sleep(2)
 
     
 
@@ -256,7 +257,10 @@ def test_registry():
     lastname_box.send_keys("Kowalski")
 
     mail_box = driver.find_element(By.NAME, "email")
-    mail_box.send_keys("jankowalski10@gmail.com") # trzeba zmienić email, bo będzie błąd, że już istnieje
+
+    milli_sec = int(round(time.time() * 1000))
+
+    mail_box.send_keys("jakowalski" + str(milli_sec) + "@gmail.com") # trzeba zmienić email, bo będzie błąd, że już istnieje
 
     pass_box = driver.find_element(By.NAME, "password")
     pass_box.send_keys("testpass123")
