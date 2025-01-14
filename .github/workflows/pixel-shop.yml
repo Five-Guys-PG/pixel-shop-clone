@@ -14,6 +14,12 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Create SSL Files
+        run: |
+          mkdir -p ./ssl
+          echo "${{ secrets.SSL_KEY }}" | base64 -d > ./ssl/key.pem
+          echo "${{ secrets.SSL_CERT }}" | base64 -d > ./ssl/cert.pem
+
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
