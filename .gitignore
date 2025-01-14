@@ -1,9 +1,12 @@
 .DS_Store
 
 prestashop/var/
+prestashop/app/config/parameters.php
 
 /.env
+deployment/.env
 .venv
+venv
 
 utils/venv
 utils/__pycache__
